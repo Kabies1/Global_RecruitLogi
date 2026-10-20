@@ -1,0 +1,10 @@
+project_id = "global-recruiting-website"
+
+[functions.submit-inquiry]
+verify_jwt = false
+
+[functions.submit-application]
+verify_jwt = false
+
+[functions.purge-expired-applications]
+verify_jwt = false
