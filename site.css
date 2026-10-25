@@ -42,3 +42,11 @@
 .page-section:nth-of-type(even){background:#fbfcfa}
 .page-section:nth-of-type(odd){background:#e6efe4}
 .content-card,.step{box-shadow:0 12px 32px #153a3209}
+
+.relocation-intro{max-width:850px;margin-bottom:34px}.relocation-intro h2{font-size:clamp(28px,3.2vw,38px);line-height:1.15;margin:14px 0}.relocation-intro p{color:var(--muted);line-height:1.75}.relocation-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.relocation-card{box-shadow:0 12px 32px #153a3209}.relocation-card h3{font-size:18px;margin-bottom:10px}.relocation-card p{color:var(--muted);line-height:1.7;margin:0}.relocation-card strong{color:var(--ink)}.relocation-commitment{margin-top:24px;padding:26px 28px;border-radius:18px;background:#e6efe4}.relocation-commitment h3{font-size:20px;margin-bottom:10px}.relocation-commitment p{color:var(--muted);line-height:1.7}.relocation-commitment p:last-child{margin-bottom:0}.relocation-commitment strong{color:var(--ink)}.relocation-note{margin:18px 0 0;color:var(--muted);font-size:13px;line-height:1.7}
+@media(max-width:650px){.relocation-grid{grid-template-columns:1fr}.relocation-commitment{padding:22px}}
+
+.needs-intro{max-width:850px;margin-bottom:34px}.needs-intro h2{font-size:clamp(30px,3.2vw,40px);line-height:1.15;margin:14px 0}.needs-intro p{color:var(--muted);line-height:1.75}.needs-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.needs-card h3{font-size:18px;margin-bottom:10px}.needs-card p{color:var(--muted);line-height:1.7;margin:0}.needs-commitment{margin-top:24px;padding:27px 30px;border-radius:18px;background:#e6efe4}.needs-commitment h3{font-size:21px;margin-bottom:12px}.needs-commitment p{color:var(--muted);line-height:1.7}.needs-commitment strong{color:var(--ink)}.needs-commitment .btn{margin-top:4px}
+@media(max-width:650px){.needs-grid{grid-template-columns:1fr}.needs-commitment{padding:22px}}
+
+.document-checklist{padding-left:20px;color:var(--muted);font-size:13px;line-height:1.7}.document-checklist li{padding:3px 0}.document-checklist strong{color:var(--ink)}
