@@ -20,9 +20,15 @@
     .comparison-proof{display:flex;align-items:center;gap:16px;margin-top:34px;color:var(--muted);font-size:13px;line-height:1.6}
     .comparison-proof strong{color:var(--ink);font-size:15px}
     .comparison-proof-mark{display:grid;place-items:center;min-width:76px;height:56px;border-radius:18px;background:white;color:var(--green);font-size:18px;font-weight:800;letter-spacing:-.08em}
-    .comparison-hero-photo{position:relative;min-height:350px;margin:0;overflow:hidden;border-radius:26px;background:#dce8dc}
-    .comparison-hero-photo img{position:absolute;width:100%;height:100%;object-fit:cover;inset:0}
-    .comparison-hero-photo figcaption{position:absolute;right:18px;bottom:18px;padding:14px 20px;border-radius:999px;background:#112e2a;color:white;font:700 15px Manrope,sans-serif}
+    .comparison-hero-photo{position:relative;min-height:350px;margin:0;overflow:hidden;border-radius:26px;background:#dce8dc;isolation:isolate}
+    .comparison-hero-photo .hero-slide{position:absolute;width:100%;height:100%;object-fit:cover;inset:0;opacity:0;transition:opacity .7s ease}
+    .comparison-hero-photo .hero-slide.is-active{opacity:1}
+    .comparison-hero-photo figcaption{position:absolute;z-index:2;right:18px;top:18px;padding:14px 20px;border-radius:999px;background:#112e2a;color:white;font:700 15px Manrope,sans-serif}
+    .hero-carousel-controls{position:absolute;z-index:3;left:18px;bottom:18px;display:flex;gap:8px}
+    .hero-carousel-controls button{display:grid;place-items:center;min-width:40px;height:40px;padding:0 12px;border:1px solid #ffffff80;border-radius:999px;background:#112e2ae8;color:white;font:700 18px Manrope,sans-serif;cursor:pointer}
+    .hero-carousel-controls button:hover,.hero-carousel-controls button:focus-visible{background:#176253;outline:2px solid white;outline-offset:2px}
+    .hero-carousel-controls .hero-toggle{font-size:13px}
+    @media(prefers-reduced-motion:reduce){.comparison-hero-photo .hero-slide{transition:none}}
     .comparison-services{padding:78px 0;background:#e6efe4}
     .comparison-services .section-head{max-width:680px}
     .comparison-service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
@@ -58,7 +64,11 @@
         </div>
         <div class="comparison-proof"><span class="comparison-proof-mark" aria-hidden="true">G + ♡</span><span><strong>Personal support, at every step</strong><br>People-first recruiting for a changing world</span></div>
       </div>
-      <figure class="comparison-hero-photo"><img src="assets/employer-team.jpeg" alt="Healthcare professionals discussing care together"><figcaption>Healthcare talent, worldwide</figcaption></figure>
+      <figure class="comparison-hero-photo" aria-roledescription="carousel" aria-label="Healthcare recruitment photos">
+        <img class="hero-slide is-active" src="assets/home-hero-people-first.avif" alt="Healthcare and recruitment team"><img class="hero-slide" src="assets/home-hero-career-support.webp" alt="Healthcare professional and colleague walking together"><img class="hero-slide" src="assets/home-hero-international-network.avif" alt="Healthcare recruitment professionals"><img class="hero-slide" src="assets/home-hero-candidate-support.avif" alt="Healthcare professionals and candidates"><img class="hero-slide" src="assets/home-hero-healthcare-team.webp" alt="Healthcare team meeting with a physician"><img class="hero-slide" src="assets/home-hero-recruitment.avif" alt="People connected through healthcare recruitment">
+        <div class="hero-carousel-controls" aria-label="Carousel controls"><button type="button" class="hero-prev" aria-label="Previous image">‹</button><button type="button" class="hero-toggle" aria-label="Pause automatic image rotation">Pause</button><button type="button" class="hero-next" aria-label="Next image">›</button></div>
+        <figcaption>Healthcare talent, worldwide</figcaption>
+      </figure>
     </div>
   </section>
   <section class="comparison-services" id="journey">
@@ -81,7 +91,51 @@
     </div>
   </section>
 </main>
-  <footer><div class="wrap"><div class="footer-grid"><div><a class="brand footer-brand" href="#home"><img class="brand-logo" src="assets/company-logo.jpg" alt=""><span>GLOBAL RECRUITMENT<small style="color:#9bb3a8">AND LOGISTICS LLC</small></span></a><p>Connecting healthcare professionals with opportunities, and care organizations with people who make a difference.</p></div><div class="footer-col"><b>Explore</b><a href="healthcare-resources.html">Healthcare resources</a><a href="workforce-solutions.html">Workforce solutions</a><a href="resources.html">Resources</a><a href="about.html">About us</a></div><div class="footer-col"><b>Get in touch</b><a href="contact.html">Contact form</a><a href="mailto:admin1@glblogistics.org">admin1@glblogistics.org</a><a href="mailto:mkabeireho@glblogistics.org">mkabeireho@glblogistics.org</a><a href="tel:+18482283970">+1 (848) 228-3970</a><span>1905 Holland Dr., Somerset, NJ 08873, USA</span></div><div class="footer-col"><b>Our commitment</b><span>Clear communication</span><span>Respectful recruiting</span><span>People-first partnerships</span></div></div><div class="footer-col footer-social"><b>Follow us</b><a href="https://www.facebook.com/share/18NXe2mBmB/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://x.com/" target="_blank" rel="noopener noreferrer">X</a><a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">TikTok</a><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.snapchat.com/" target="_blank" rel="noopener noreferrer">Snapchat</a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></div><div class="copyright"><span>© <span id="year">2026</span> Global Recruitment and Logistics LLC. All rights reserved.</span><a href="admin.html">Admin sign-in</a><nav class="footer-legal" aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="terms.html#copyright">Copyright</a></nav></div></div></footer>
+  <footer><div class="wrap"><div class="footer-grid"><div><a class="brand footer-brand" href="#home"><img class="brand-logo" src="assets/company-logo.jpg" alt=""><span>GLOBAL RECRUITMENT<small style="color:#9bb3a8">AND LOGISTICS LLC</small></span></a><p>Connecting healthcare professionals with opportunities, and care organizations with people who make a difference.</p></div><div class="footer-col"><b>Explore</b><a href="healthcare-resources.html">Healthcare resources</a><a href="workforce-solutions.html">Workforce solutions</a><a href="resources.html">Resources</a><a href="about.html">About us</a></div><div class="footer-col"><b>Get in touch</b><a href="contact.html">Contact form</a><a href="mailto:admin1@glblogistics.org">admin1@glblogistics.org</a><a href="mailto:info@glblogistics.org">info@glblogistics.org</a><a href="tel:+18482283970">+1 (848) 228-3970</a><span>1905 Holland Dr., Somerset, NJ 08873, USA</span></div><div class="footer-col"><b>Our commitment</b><span>Clear communication</span><span>Respectful recruiting</span><span>People-first partnerships</span></div></div><div class="footer-col footer-social"><b>Follow us</b><a href="https://www.facebook.com/share/18NXe2mBmB/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://x.com/GlobalRecruitn" target="_blank" rel="noopener noreferrer">X</a><a href="https://www.tiktok.com/@user9239941815171" target="_blank" rel="noopener noreferrer">TikTok</a><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.snapchat.com/" target="_blank" rel="noopener noreferrer">Snapchat</a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></div><div class="copyright"><span>© <span id="year">2026</span> Global Recruitment and Logistics LLC. All rights reserved.</span><a href="admin.html">Admin sign-in</a><nav class="footer-legal" aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="terms.html#copyright">Copyright</a></nav></div></div></footer>
   <script src="site.js"></script>
+  <script>
+    (() => {
+      const carousel = document.querySelector('.comparison-hero-photo');
+      if (!carousel) return;
+      const slides = [...carousel.querySelectorAll('.hero-slide')];
+      const toggle = carousel.querySelector('.hero-toggle');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let active = 0;
+      let paused = reducedMotion;
+      let hovered = false;
+      let focused = false;
+      let timer;
+      const show = (index) => {
+        active = (index + slides.length) % slides.length;
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('is-active', i === active);
+          slide.setAttribute('aria-hidden', i === active ? 'false' : 'true');
+        });
+      };
+      const stop = () => { window.clearInterval(timer); timer = undefined; };
+      const start = () => {
+        stop();
+        if (!paused && !hovered && !focused) timer = window.setInterval(() => show(active + 1), 5000);
+      };
+      carousel.querySelector('.hero-prev').addEventListener('click', () => { show(active - 1); start(); });
+      carousel.querySelector('.hero-next').addEventListener('click', () => { show(active + 1); start(); });
+      toggle.addEventListener('click', () => {
+        paused = !paused;
+        toggle.textContent = paused ? 'Play' : 'Pause';
+        toggle.setAttribute('aria-label', paused ? 'Resume automatic image rotation' : 'Pause automatic image rotation');
+        start();
+      });
+      carousel.addEventListener('mouseenter', () => { hovered = true; stop(); });
+      carousel.addEventListener('mouseleave', () => { hovered = false; start(); });
+      carousel.addEventListener('focusin', () => { focused = true; stop(); });
+      carousel.addEventListener('focusout', (event) => {
+        if (!carousel.contains(event.relatedTarget)) { focused = false; start(); }
+      });
+      if (reducedMotion) {
+        toggle.textContent = 'Play';
+        toggle.setAttribute('aria-label', 'Start automatic image rotation');
+      } else start();
+    })();
+  </script>
 </body>
 </html>
