@@ -50,3 +50,19 @@
 @media(max-width:650px){.needs-grid{grid-template-columns:1fr}.needs-commitment{padding:22px}}
 
 .document-checklist{padding-left:20px;color:var(--muted);font-size:13px;line-height:1.7}.document-checklist li{padding:3px 0}.document-checklist strong{color:var(--ink)}
+
+/* Company introduction video */
+.company-intro-section .section-head{max-width:760px;margin-bottom:24px}.company-intro-video{display:block;width:min(100%,640px);height:clamp(180px,56.25vw,360px);max-height:360px;margin:0 auto;object-fit:contain;background:#112e2a;border-radius:20px;box-shadow:var(--shadow)}
+
+/* Firefox benefits from a slightly larger video rendering area for embedded title text. */
+@supports (-moz-appearance:none){.company-intro-video{width:min(100%,760px)!important;max-width:760px!important;height:clamp(180px,56.25vw,428px)!important;max-height:428px!important}}
+
+/* Optional full-size playback control is shown in Firefox only. */
+
+.company-video-expand{display:none;margin:16px auto 0}
+.company-video-dialog{width:min(94vw,1080px);max-width:none;max-height:90vh;padding:16px;border:0;border-radius:18px;background:#112e2a;box-shadow:0 24px 80px #0008}
+.company-video-dialog::backdrop{background:#071816d9}
+.company-video-dialog-inner{display:grid;gap:12px}
+.company-video-close{justify-self:end}
+.company-video-dialog .company-intro-modal-video{display:block;width:100%!important;max-width:100%!important;height:min(72vh,620px)!important;max-height:72vh!important;margin:0 auto;object-fit:contain;background:#000;border-radius:10px}
+@supports (-moz-appearance:none){.company-video-expand{display:flex}}
